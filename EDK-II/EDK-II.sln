@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UefiRuntimeLib", "UefiRunti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseMemoryLib", "BaseMemoryLib\BaseMemoryLib.vcxproj", "{800C8E76-FFE0-4892-BD11-429B51D556D0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseBmpSupportLib", "BaseBmpSupportLib\BaseBmpSupportLib.vcxproj", "{891F0200-7BF7-4483-9FCD-A1E93AFEF113}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpensslLib", "OpensslLib\OpensslLib.vcxproj", "{362BEE7E-5FBE-45D4-B303-3C0451E87C35}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseCryptLib", "BaseCryptLib\BaseCryptLib.vcxproj", "{6F08C1AF-ECF2-472D-8ABA-686F8F21CA5E}"
@@ -101,6 +103,8 @@ Global
 		{4801026C-F7EA-4D77-A98B-C075C253CF32}.Release|x64.Build.0 = Release|x64
 		{800C8E76-FFE0-4892-BD11-429B51D556D0}.Release|x64.ActiveCfg = Release|x64
 		{800C8E76-FFE0-4892-BD11-429B51D556D0}.Release|x64.Build.0 = Release|x64
+		{891F0200-7BF7-4483-9FCD-A1E93AFEF113}.Release|x64.ActiveCfg = Release|x64
+		{891F0200-7BF7-4483-9FCD-A1E93AFEF113}.Release|x64.Build.0 = Release|x64
 		{362BEE7E-5FBE-45D4-B303-3C0451E87C35}.Release|x64.ActiveCfg = Release|x64
 		{362BEE7E-5FBE-45D4-B303-3C0451E87C35}.Release|x64.Build.0 = Release|x64
 		{6F08C1AF-ECF2-472D-8ABA-686F8F21CA5E}.Release|x64.ActiveCfg = Release|x64
