@@ -3,6 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <EDK_PATH>$(SolutionDir)..\edk2</EDK_PATH>
+    <NASM_PREFIX>$(SolutionDir)..\NASM\</NASM_PREFIX>
     <OPENSSL_PATH>$(SolutionDir)..\openssl</OPENSSL_PATH>
   </PropertyGroup>
   <PropertyGroup>
@@ -22,6 +23,10 @@
     </BuildMacro>
     <BuildMacro Include="OPENSSL_PATH">
       <Value>$(OPENSSL_PATH)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="NASM_PREFIX">
+      <Value>$(NASM_PREFIX)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>
