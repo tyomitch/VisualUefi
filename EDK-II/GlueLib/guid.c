@@ -46,6 +46,7 @@ WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 #include <Protocol/HiiDatabase.h>
 #include <Protocol/HiiString.h>
 #include <Protocol/HiiConfigRouting.h>
+#include <Protocol/HiiPackageList.h>
 #include <Protocol/FormBrowser2.h>
 #include <Guid/MdeModuleHii.h>
 
@@ -98,6 +99,7 @@ EFI_GUID gEfiHiiStringProtocolGuid = EFI_HII_STRING_PROTOCOL_GUID;
 EFI_GUID gEfiHiiDatabaseProtocolGuid = EFI_HII_DATABASE_PROTOCOL_GUID;
 EFI_GUID gEfiHiiImageProtocolGuid = EFI_HII_IMAGE_PROTOCOL_GUID;
 EFI_GUID gEfiHiiConfigRoutingProtocolGuid = EFI_HII_CONFIG_ROUTING_PROTOCOL_GUID;
+EFI_GUID gEfiHiiPackageListProtocolGuid = EFI_HII_PACKAGE_LIST_PROTOCOL_GUID;
 
 EFI_GUID gEfiFormBrowser2ProtocolGuid = EFI_FORM_BROWSER2_PROTOCOL_GUID;
 
