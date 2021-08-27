@@ -19,16 +19,16 @@
   <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>UefiApplicationEntryPoint.lib;BaseBmpSupportLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>UefiApplicationEntryPoint.lib;BaseBmpSupportLib.lib;UefiStdLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>EFI Application</SubSystem>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(EDK_PATH)\MdeModulePkg\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EDK_PATH)\MdeModulePkg\Include;$(EDK_PATH)\StdLib\Include;$(EDK_PATH)\StdLib\Include\X64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4117;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="helloapp.c" />
-    <Masm Include="SinCos.asm" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UefiApplication.rc" />

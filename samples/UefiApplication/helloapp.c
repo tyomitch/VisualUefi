@@ -30,6 +30,7 @@ Environment:
 #include <Library/BmpSupportLib.h>
 #include <Protocol/HiiImage.h>
 #include <Protocol/HiiPackageList.h>
+#include <math.h>
 
 //
 // Boot and Runtime Services
@@ -45,10 +46,6 @@ extern CONST UINT32 _gUefiDriverRevision = 0;
 // Our name
 //
 CHAR8 *gEfiCallerBaseName = "ShellSample";
-
-#define M_PI 3.14159265358979323846
-extern void SinCos(double AngleInRadians, double *pSinAns, double *pCosAns);
-int _fltused;
 
 EFI_STATUS
 EFIAPI
@@ -72,8 +69,6 @@ UefiMain (
     EFI_STATUS efiStatus;
     EFI_GUID gopGuid = EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID;
     EFI_GRAPHICS_OUTPUT_PROTOCOL* gop;
-    double sin, cos;
-
     VOID* PackageList;
     UINTN size;
     EFI_PHYSICAL_ADDRESS Buffer;
@@ -127,14 +122,14 @@ UefiMain (
             (UINTN)(2.4 * tree_width_factor),
             gop->Mode->Info->VerticalResolution - Image.Height, 0);
 
+        double p = 2 * M_PI * tick / 36; // (0.5 revs / sec)
+
         for (double t = 0; t < 1; t += .001) {
             double width = t * tree_width_factor;
             double w = 2 * M_PI * 5;
-            double p = 2 * M_PI * tick / 36; // (0.5 revs / sec)
             double angle = w * t + p;
-            SinCos(angle, &sin, &cos);
-            double x = width * cos + tree_width_base;
-            double z = width * sin;
+            double x = width * cos(angle) + tree_width_base;
+            double z = width * sin(angle);
             double y = t * tree_height_factor;
             UINTN x_disp = (UINTN)(x + z * .5);
             UINTN y_disp = (UINTN)(y + z * .25) + Image.Height;
@@ -156,17 +151,18 @@ UefiMain (
 
         for (UINTN i = 0; i < Image.Width * Image.Height; i++) {
             if (Image.Bitmap[i].Blue > Image.Bitmap[i].Red) {
-                if (sin > 0) {
+                double v = sin(p);
+                if (v > 0) {
                     // blend with (0,0,0)
-                    logo[i].Red = (UINT8)(Image.Bitmap[i].Red * (1 - sin));
-                    logo[i].Green = (UINT8)(Image.Bitmap[i].Green * (1 - sin));
-                    logo[i].Blue = (UINT8)(Image.Bitmap[i].Blue * (1 - sin));
+                    logo[i].Red = (UINT8)(Image.Bitmap[i].Red * (1 - v));
+                    logo[i].Green = (UINT8)(Image.Bitmap[i].Green * (1 - v));
+                    logo[i].Blue = (UINT8)(Image.Bitmap[i].Blue * (1 - v));
                 }
                 else {
                     // blend with (175, 224, 250)
-                    logo[i].Red = (UINT8)(175 - (175 - Image.Bitmap[i].Red) * (1 + sin));
-                    logo[i].Green = (UINT8)(224 - (224 - Image.Bitmap[i].Green) * (1 + sin));
-                    logo[i].Blue = (UINT8)(250 - (250 - Image.Bitmap[i].Blue) * (1 + sin));
+                    logo[i].Red = (UINT8)(175 - (175 - Image.Bitmap[i].Red) * (1 + v));
+                    logo[i].Green = (UINT8)(224 - (224 - Image.Bitmap[i].Green) * (1 + v));
+                    logo[i].Blue = (UINT8)(250 - (250 - Image.Bitmap[i].Blue) * (1 + v));
                 }
             }
         }
