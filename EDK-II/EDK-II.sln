@@ -56,6 +56,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UefiShellLib", "UefiShellLi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UefiSortLib", "UefiSortLib\UefiSortLib.vcxproj", "{9B66ED85-72D6-4581-9A56-4E1F94D0C787}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UefiStdLib", "UefiStdLib\UefiStdLib.vcxproj", "{CB66B7F3-D687-4626-AEAF-FECB2305B646}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UefiHiiLib", "UefiHiiLib\UefiHiiLib.vcxproj", "{53122BEE-9C19-4380-8B7F-B9D8FFA28AB0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UefiHiiServicesLib", "UefiHiiServicesLib\UefiHiiServicesLib.vcxproj", "{8B3E5877-7789-4E21-9E7E-497FCFC70AC4}"
@@ -115,6 +117,8 @@ Global
 		{D71E4E3B-6239-4AD1-A1C8-272E8673F980}.Release|x64.Build.0 = Release|x64
 		{9B66ED85-72D6-4581-9A56-4E1F94D0C787}.Release|x64.ActiveCfg = Release|x64
 		{9B66ED85-72D6-4581-9A56-4E1F94D0C787}.Release|x64.Build.0 = Release|x64
+		{CB66B7F3-D687-4626-AEAF-FECB2305B646}.Release|x64.ActiveCfg = Release|x64
+		{CB66B7F3-D687-4626-AEAF-FECB2305B646}.Release|x64.Build.0 = Release|x64
 		{53122BEE-9C19-4380-8B7F-B9D8FFA28AB0}.Release|x64.ActiveCfg = Release|x64
 		{53122BEE-9C19-4380-8B7F-B9D8FFA28AB0}.Release|x64.Build.0 = Release|x64
 		{8B3E5877-7789-4E21-9E7E-497FCFC70AC4}.Release|x64.ActiveCfg = Release|x64

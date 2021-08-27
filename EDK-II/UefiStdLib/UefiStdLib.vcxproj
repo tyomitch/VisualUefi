@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{CB66B7F3-D687-4626-AEAF-FECB2305B646}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(SolutionDir)\edk2.default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <Import Project="$(SolutionDir)\edk2.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(EDK_PATH)\StdLib\Include;$(EDK_PATH)\StdLib\Include\X64;$(EDK_PATH)\StdLibPrivateInternalFiles\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <DisableSpecificWarnings>4117;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\errno.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\assert.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\isinfd_ieee754.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\isinff_ieee754.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\isnand_ieee754.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\isnanf_ieee754.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\infinityf_ieee754.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\Main.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\HtoNtoH.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\ByteSwap.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\longjmp.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\x86flt_rounds.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\X64\isinfl.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Main\X64\isnanl.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_acos.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_asin.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_atan2.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_cosh.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_exp.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_sinh.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_log.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_log2.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_log10.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_pow.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_sqrt.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_fmod.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\e_rem_pio2.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\k_cos.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\k_sin.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\k_tan.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\k_rem_pio2.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_atan.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_cos.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_sin.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_tan.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_expm1.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_tanh.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_frexp.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_ldexp.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_scalbn.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_copysign.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_finite.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_infinity.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_modf.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_fabs.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_ceil.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\s_floor.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_acos.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_asin.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_atan2.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_cosh.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_sinh.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_exp.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_log.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_log2.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_log10.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_pow.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_sqrt.c" />
+    <ClCompile Include="$(EDK_PATH)\StdLib\LibC\Math\w_fmod.c" />
+  </ItemGroup>
+</Project>
