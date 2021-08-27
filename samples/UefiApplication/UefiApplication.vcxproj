@@ -13,15 +13,25 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <Import Project="$(SolutionDir)\samples.default.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   <Import Project="$(SolutionDir)\samples.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>UefiApplicationEntryPoint.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>UefiApplicationEntryPoint.lib;BaseBmpSupportLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>EFI Application</SubSystem>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(EDK_PATH)\MdeModulePkg\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="helloapp.c" />
+    <Masm Include="SinCos.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UefiApplication.rc" />
+    <Image Include="ruvds.bmp" />
   </ItemGroup>
 </Project>
